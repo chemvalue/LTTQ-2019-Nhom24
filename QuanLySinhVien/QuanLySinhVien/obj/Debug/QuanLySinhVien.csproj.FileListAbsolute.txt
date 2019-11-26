@@ -1,1 +1,14 @@
 D:\GIT\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe.config
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe.config
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.exe
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\QuanLySinhVien.pdb
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\EntityFramework.dll
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\EntityFramework.SqlServer.dll
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\EntityFramework.xml
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\bin\Debug\EntityFramework.SqlServer.xml
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csprojResolveAssemblyReference.cache
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Form1.resources
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.Properties.Resources.resources
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.csproj.GenerateResource.Cache
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.exe
+D:\GITHUB\LTTQ-2019-Nhom24\QuanLySinhVien\QuanLySinhVien\obj\Debug\QuanLySinhVien.pdb

@@ -32,8 +32,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,8 +61,56 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="KHOAVIEN.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KTX.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOAIHINHDT.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOP.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NGANH.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NGOAITRU.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NGUOITHAN.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NOITRU.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLHSSV.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSSV.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLHSSV.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLHSSV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSSV.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SINHVIEN.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER.cs">
+      <DependentUpon>QLHSSV.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,6 +120,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -70,9 +130,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="QLHSSV.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLHSSV.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLHSSV.edmx.diagram">
+      <DependentUpon>QLHSSV.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QLHSSV.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLHSSV.edmx</DependentUpon>
+      <LastGenOutput>QLHSSV.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QLHSSV.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLHSSV.edmx</DependentUpon>
+      <LastGenOutput>QLHSSV.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

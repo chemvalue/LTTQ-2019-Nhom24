@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLHSSVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KHOAVIEN">
+    <Key>
+      <PropertyRef Name="MKV" />
+    </Key>
+    <Property Name="MKV" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenKhoaVien" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NGANHs" Relationship="Self.FK_NGANH_KHOAVIEN" FromRole="KHOAVIEN" ToRole="NGANH" />
+  </EntityType>
+  <EntityType Name="KTX">
+    <Key>
+      <PropertyRef Name="MaKTX" />
+    </Key>
+    <Property Name="MaKTX" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenKTX" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NOITRUs" Relationship="Self.FK_NOITRU_KTX" FromRole="KTX" ToRole="NOITRU" />
+  </EntityType>
+  <EntityType Name="LOAIHINHDT">
+    <Key>
+      <PropertyRef Name="MaDT" />
+    </Key>
+    <Property Name="MaDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LoaiHinhDT1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SINHVIENs" Relationship="Self.FK_SINHVIEN_LOAIHINHDT" FromRole="LOAIHINHDT" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MaNganh" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NGANH" Relationship="Self.FK_LOP_NGANH" FromRole="LOP" ToRole="NGANH" />
+    <NavigationProperty Name="SINHVIENs" Relationship="Self.FK_SINHVIEN_LOP" FromRole="LOP" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="NGANH">
+    <Key>
+      <PropertyRef Name="MaNganh" />
+    </Key>
+    <Property Name="MaNganh" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenNganh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MKV" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="KHOAVIEN" Relationship="Self.FK_NGANH_KHOAVIEN" FromRole="NGANH" ToRole="KHOAVIEN" />
+    <NavigationProperty Name="LOPs" Relationship="Self.FK_LOP_NGANH" FromRole="NGANH" ToRole="LOP" />
+  </EntityType>
+  <EntityType Name="NGOAITRU">
+    <Key>
+      <PropertyRef Name="MaNGT" />
+    </Key>
+    <Property Name="MaNGT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenChuHo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SINHVIENs" Relationship="Self.FK_SINHVIEN_NGOAITRU" FromRole="NGOAITRU" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="NGUOITHAN">
+    <Key>
+      <PropertyRef Name="MSV" />
+      <PropertyRef Name="QuanHe" />
+    </Key>
+    <Property Name="MSV" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="HoTenNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NamSinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="QuanHe" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SINHVIEN" Relationship="Self.FK_NGUOITHAN_SINHVIEN" FromRole="NGUOITHAN" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="NOITRU">
+    <Key>
+      <PropertyRef Name="TenPhong" />
+    </Key>
+    <Property Name="TenPhong" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="MaKTX" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="KTX" Relationship="Self.FK_NOITRU_KTX" FromRole="NOITRU" ToRole="KTX" />
+    <NavigationProperty Name="SINHVIENs" Relationship="Self.FK_SINHVIEN_NOITRU" FromRole="NOITRU" ToRole="SINHVIEN" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MSV" />
+    </Key>
+    <Property Name="MSV" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="HoTenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="DanToc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoiSinh" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="QueQuan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="MaLop" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="TenPhong" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="MaNGT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="MaDT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="LOAIHINHDT" Relationship="Self.FK_SINHVIEN_LOAIHINHDT" FromRole="SINHVIEN" ToRole="LOAIHINHDT" />
+    <NavigationProperty Name="LOP" Relationship="Self.FK_SINHVIEN_LOP" FromRole="SINHVIEN" ToRole="LOP" />
+    <NavigationProperty Name="NGOAITRU" Relationship="Self.FK_SINHVIEN_NGOAITRU" FromRole="SINHVIEN" ToRole="NGOAITRU" />
+    <NavigationProperty Name="NGUOITHANs" Relationship="Self.FK_NGUOITHAN_SINHVIEN" FromRole="SINHVIEN" ToRole="NGUOITHAN" />
+    <NavigationProperty Name="NOITRU" Relationship="Self.FK_SINHVIEN_NOITRU" FromRole="SINHVIEN" ToRole="NOITRU" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_NGANH_KHOAVIEN">
+    <End Role="KHOAVIEN" Type="Self.KHOAVIEN" Multiplicity="0..1" />
+    <End Role="NGANH" Type="Self.NGANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOAVIEN">
+        <PropertyRef Name="MKV" />
+      </Principal>
+      <Dependent Role="NGANH">
+        <PropertyRef Name="MKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NOITRU_KTX">
+    <End Role="KTX" Type="Self.KTX" Multiplicity="1" />
+    <End Role="NOITRU" Type="Self.NOITRU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KTX">
+        <PropertyRef Name="MaKTX" />
+      </Principal>
+      <Dependent Role="NOITRU">
+        <PropertyRef Name="MaKTX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_LOAIHINHDT">
+    <End Role="LOAIHINHDT" Type="Self.LOAIHINHDT" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIHINHDT">
+        <PropertyRef Name="MaDT" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOP_NGANH">
+    <End Role="NGANH" Type="Self.NGANH" Multiplicity="0..1" />
+    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGANH">
+        <PropertyRef Name="MaNganh" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MaNganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_LOP">
+    <End Role="LOP" Type="Self.LOP" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_NGOAITRU">
+    <End Role="NGOAITRU" Type="Self.NGOAITRU" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGOAITRU">
+        <PropertyRef Name="MaNGT" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaNGT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGUOITHAN_SINHVIEN">
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="1" />
+    <End Role="NGUOITHAN" Type="Self.NGUOITHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SINHVIEN">
+        <PropertyRef Name="MSV" />
+      </Principal>
+      <Dependent Role="NGUOITHAN">
+        <PropertyRef Name="MSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_NOITRU">
+    <End Role="NOITRU" Type="Self.NOITRU" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOITRU">
+        <PropertyRef Name="TenPhong" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="TenPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLHSSVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KHOAVIENs" EntityType="Self.KHOAVIEN" />
+    <EntitySet Name="KTXes" EntityType="Self.KTX" />
+    <EntitySet Name="LOAIHINHDTs" EntityType="Self.LOAIHINHDT" />
+    <EntitySet Name="LOPs" EntityType="Self.LOP" />
+    <EntitySet Name="NGANHs" EntityType="Self.NGANH" />
+    <EntitySet Name="NGOAITRUs" EntityType="Self.NGOAITRU" />
+    <EntitySet Name="NGUOITHANs" EntityType="Self.NGUOITHAN" />
+    <EntitySet Name="NOITRUs" EntityType="Self.NOITRU" />
+    <EntitySet Name="SINHVIENs" EntityType="Self.SINHVIEN" />
+    <EntitySet Name="USERs" EntityType="Self.USER" />
+    <AssociationSet Name="FK_NGANH_KHOAVIEN" Association="Self.FK_NGANH_KHOAVIEN">
+      <End Role="KHOAVIEN" EntitySet="KHOAVIENs" />
+      <End Role="NGANH" EntitySet="NGANHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NOITRU_KTX" Association="Self.FK_NOITRU_KTX">
+      <End Role="KTX" EntitySet="KTXes" />
+      <End Role="NOITRU" EntitySet="NOITRUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_LOAIHINHDT" Association="Self.FK_SINHVIEN_LOAIHINHDT">
+      <End Role="LOAIHINHDT" EntitySet="LOAIHINHDTs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOP_NGANH" Association="Self.FK_LOP_NGANH">
+      <End Role="NGANH" EntitySet="NGANHs" />
+      <End Role="LOP" EntitySet="LOPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_LOP" Association="Self.FK_SINHVIEN_LOP">
+      <End Role="LOP" EntitySet="LOPs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_NGOAITRU" Association="Self.FK_SINHVIEN_NGOAITRU">
+      <End Role="NGOAITRU" EntitySet="NGOAITRUs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOITHAN_SINHVIEN" Association="Self.FK_NGUOITHAN_SINHVIEN">
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+      <End Role="NGUOITHAN" EntitySet="NGUOITHANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_NOITRU" Association="Self.FK_SINHVIEN_NOITRU">
+      <End Role="NOITRU" EntitySet="NOITRUs" />
+      <End Role="SINHVIEN" EntitySet="SINHVIENs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
