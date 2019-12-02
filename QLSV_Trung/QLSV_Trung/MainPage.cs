@@ -19,18 +19,8 @@ namespace QLSV_Trung
 
         private void MainPage_Load(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
-            lblDate.Text = dt.ToString("dd-MM-yyyy");
+            
         }
 
-        private void lblDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

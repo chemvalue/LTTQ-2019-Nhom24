@@ -103,7 +103,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 15);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Đánh lại mật khẩu";
+            this.label5.Text = "Nhập lại mật khẩu";
             // 
             // label4
             // 
@@ -148,6 +148,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.Size = new System.Drawing.Size(344, 319);
             this.dgvUsers.TabIndex = 0;
+            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
             // ID
             // 

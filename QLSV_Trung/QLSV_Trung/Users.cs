@@ -60,11 +60,10 @@ namespace QLSV_Trung
                 {
                     if (txtMK.Text.Equals(txtConfimMk.Text))
                     {
-                        if(check()==0)
+                        if(db.check(txtTaikhoan.Text)==0)
                         {
                             string sql = "insert into USERS values('" + txtTaikhoan.Text + "','" + txtMK.Text + "', 0)";
-                            SqlCommand cmd = new SqlCommand(sql, conn);
-                            cmd.ExecuteNonQuery();
+                            db.excute(sql);
                             refreshDataGridView();
                         }
                         else
@@ -102,11 +101,10 @@ namespace QLSV_Trung
                 {
                     if (txtMK.Text.Equals(txtConfimMk.Text))
                     {
-                        if(check()!=0)
+                        if(db.check(txtTaikhoan.Text)!=0)
                         {
                             string sql = "update USERS set MatKhau = '"+txtMK.Text+"' where TenDangNhap = '"+txtTaikhoan.Text+"'";
-                            SqlCommand cmd = new SqlCommand(sql, conn);
-                            cmd.ExecuteNonQuery();
+                            db.excute(sql);
                             refreshDataGridView();
                         }
                         else
@@ -143,11 +141,10 @@ namespace QLSV_Trung
                 {
                     if (txtMK.Text.Equals(txtConfimMk.Text))
                     {
-                        if (check() != 0)
+                        if (db.check(txtTaikhoan.Text) != 0)
                         {
                             string sql = "delete from USERS where TenDangNhap = '" + txtTaikhoan.Text + "'";
-                            SqlCommand cmd = new SqlCommand(sql, conn);
-                            cmd.ExecuteNonQuery();
+                            db.excute(sql);
                             refreshDataGridView();
                         }
                         else
@@ -169,29 +166,22 @@ namespace QLSV_Trung
 
             conn.Close();
         }
-        private int check()
-        {
-            string sql = "select COUNT(*) from USERS where TenDangNhap = '"+txtTaikhoan.Text+"'";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            int a = (int)cmd.ExecuteScalar();
-            return a;
-        }
+        
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             conn = db.connected();
-            conn.Open();
-            string sql = "select COUNT(*) from USERS where TenDangNhap = '" + txtSearch.Text + "'";
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            if((int)cmd.ExecuteScalar()>0)
-            {
-                dgvUsers.DataSource = db.getData("SELECT * FROM USERS where TenDangNhap = '"+txtSearch.Text+"'");
-            }
-            else
-            {
-                MessageBox.Show("Khong tim thay tai khoan nay!", "Thong bao!");
-            }
+            conn.Open();           
+            dgvUsers.DataSource = db.getData("SELECT * FROM USERS where TenDangNhap like '%"+txtSearch.Text+"%'");         
             conn.Close();
+        }
+
+        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dgvUsers.CurrentRow.Index;
+            txtTaikhoan.Text = dgvUsers.Rows[i].Cells[1].Value.ToString();
+            txtMK.Text = dgvUsers.Rows[i].Cells[2].Value.ToString();
+            txtConfimMk.Text = dgvUsers.Rows[i].Cells[2].Value.ToString();
         }
 
     }
