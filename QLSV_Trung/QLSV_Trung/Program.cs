@@ -16,7 +16,7 @@ namespace QLSV_Trung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Daotao());
+            Application.Run(new LogIn());
         }
     }
 }

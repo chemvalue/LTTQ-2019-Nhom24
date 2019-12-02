@@ -14,7 +14,7 @@ namespace QLSV_Trung
     public partial class LogIn : Form
     {
         MyDatabase mdb = new MyDatabase();
-        private SqlConnection conn = null;
+        SqlConnection conn;
         public LogIn()
         {
             InitializeComponent();
@@ -31,6 +31,8 @@ namespace QLSV_Trung
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            conn = mdb.connected();
+            conn.Open();
             string select = "Select * From USERS where TenDangNhap = '" + txtName.Text + "' and MatKhau = '" + txtPass.Text + "' and Status = 1";
             SqlCommand cmd = new SqlCommand(select, conn);
             SqlDataReader reader;
@@ -45,14 +47,7 @@ namespace QLSV_Trung
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            conn.Close();
         }
-
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-            conn = mdb.connected();
-            conn.Open();
-        }
-
-
     }
 }
