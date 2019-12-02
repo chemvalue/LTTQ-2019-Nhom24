@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLHSSVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KHOAVIEN">
+    <Key>
+      <PropertyRef Name="MKV" />
+    </Key>
+    <Property Name="MKV" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenKhoaVien" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="KTX">
+    <Key>
+      <PropertyRef Name="MaKTX" />
+    </Key>
+    <Property Name="MaKTX" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenKTX" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="LOAIHINHDT">
+    <Key>
+      <PropertyRef Name="MaDT" />
+    </Key>
+    <Property Name="MaDT" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="LoaiHinhDT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaNganh" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="NGANH">
+    <Key>
+      <PropertyRef Name="MaNganh" />
+    </Key>
+    <Property Name="MaNganh" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenNganh" Type="nvarchar" MaxLength="250" />
+    <Property Name="MKV" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="NGOAITRU">
+    <Key>
+      <PropertyRef Name="MaNGT" />
+    </Key>
+    <Property Name="MaNGT" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenChuHo" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDT" Type="nchar" MaxLength="20" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="NGUOITHAN">
+    <Key>
+      <PropertyRef Name="MSV" />
+      <PropertyRef Name="QuanHe" />
+    </Key>
+    <Property Name="MSV" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTenNT" Type="nvarchar" MaxLength="50" />
+    <Property Name="NamSinh" Type="nchar" MaxLength="10" />
+    <Property Name="QuanHe" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SDT" Type="nchar" MaxLength="15" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="NOITRU">
+    <Key>
+      <PropertyRef Name="TenPhong" />
+    </Key>
+    <Property Name="TenPhong" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="MaKTX" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SINHVIEN">
+    <Key>
+      <PropertyRef Name="MSV" />
+    </Key>
+    <Property Name="MSV" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTenSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="nchar" MaxLength="10" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="20" />
+    <Property Name="CMND" Type="nchar" MaxLength="20" />
+    <Property Name="SDT" Type="nchar" MaxLength="20" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoiSinh" Type="nvarchar" MaxLength="250" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="250" />
+    <Property Name="MaLop" Type="nchar" MaxLength="20" />
+    <Property Name="TenPhong" Type="nchar" MaxLength="20" />
+    <Property Name="MaNGT" Type="nchar" MaxLength="20" />
+    <Property Name="MaDT" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDangNhap" Type="nchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="nchar" MaxLength="20" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <Association Name="FK_LOP_NGANH">
+    <End Role="NGANH" Type="Self.NGANH" Multiplicity="0..1" />
+    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGANH">
+        <PropertyRef Name="MaNganh" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MaNganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGANH_KHOAVIEN">
+    <End Role="KHOAVIEN" Type="Self.KHOAVIEN" Multiplicity="0..1" />
+    <End Role="NGANH" Type="Self.NGANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOAVIEN">
+        <PropertyRef Name="MKV" />
+      </Principal>
+      <Dependent Role="NGANH">
+        <PropertyRef Name="MKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NGUOITHAN_SINHVIEN">
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="1" />
+    <End Role="NGUOITHAN" Type="Self.NGUOITHAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SINHVIEN">
+        <PropertyRef Name="MSV" />
+      </Principal>
+      <Dependent Role="NGUOITHAN">
+        <PropertyRef Name="MSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NOITRU_KTX">
+    <End Role="KTX" Type="Self.KTX" Multiplicity="1" />
+    <End Role="NOITRU" Type="Self.NOITRU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KTX">
+        <PropertyRef Name="MaKTX" />
+      </Principal>
+      <Dependent Role="NOITRU">
+        <PropertyRef Name="MaKTX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_LOAIHINHDT">
+    <End Role="LOAIHINHDT" Type="Self.LOAIHINHDT" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIHINHDT">
+        <PropertyRef Name="MaDT" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_LOP">
+    <End Role="LOP" Type="Self.LOP" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_NGOAITRU">
+    <End Role="NGOAITRU" Type="Self.NGOAITRU" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGOAITRU">
+        <PropertyRef Name="MaNGT" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="MaNGT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SINHVIEN_NOITRU">
+    <End Role="NOITRU" Type="Self.NOITRU" Multiplicity="0..1" />
+    <End Role="SINHVIEN" Type="Self.SINHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOITRU">
+        <PropertyRef Name="TenPhong" />
+      </Principal>
+      <Dependent Role="SINHVIEN">
+        <PropertyRef Name="TenPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLHSSVModelStoreContainer">
+    <EntitySet Name="KHOAVIEN" EntityType="Self.KHOAVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KTX" EntityType="Self.KTX" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAIHINHDT" EntityType="Self.LOAIHINHDT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGANH" EntityType="Self.NGANH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGOAITRU" EntityType="Self.NGOAITRU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NGUOITHAN" EntityType="Self.NGUOITHAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOITRU" EntityType="Self.NOITRU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SINHVIEN" EntityType="Self.SINHVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_LOP_NGANH" Association="Self.FK_LOP_NGANH">
+      <End Role="NGANH" EntitySet="NGANH" />
+      <End Role="LOP" EntitySet="LOP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGANH_KHOAVIEN" Association="Self.FK_NGANH_KHOAVIEN">
+      <End Role="KHOAVIEN" EntitySet="KHOAVIEN" />
+      <End Role="NGANH" EntitySet="NGANH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NGUOITHAN_SINHVIEN" Association="Self.FK_NGUOITHAN_SINHVIEN">
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+      <End Role="NGUOITHAN" EntitySet="NGUOITHAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NOITRU_KTX" Association="Self.FK_NOITRU_KTX">
+      <End Role="KTX" EntitySet="KTX" />
+      <End Role="NOITRU" EntitySet="NOITRU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_LOAIHINHDT" Association="Self.FK_SINHVIEN_LOAIHINHDT">
+      <End Role="LOAIHINHDT" EntitySet="LOAIHINHDT" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_LOP" Association="Self.FK_SINHVIEN_LOP">
+      <End Role="LOP" EntitySet="LOP" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_NGOAITRU" Association="Self.FK_SINHVIEN_NGOAITRU">
+      <End Role="NGOAITRU" EntitySet="NGOAITRU" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SINHVIEN_NOITRU" Association="Self.FK_SINHVIEN_NOITRU">
+      <End Role="NOITRU" EntitySet="NOITRU" />
+      <End Role="SINHVIEN" EntitySet="SINHVIEN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

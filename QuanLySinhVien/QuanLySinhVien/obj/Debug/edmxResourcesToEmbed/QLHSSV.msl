@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLHSSVModelStoreContainer" CdmEntityContainer="QLHSSVEntities">
+    <EntitySetMapping Name="KHOAVIENs">
+      <EntityTypeMapping TypeName="QLHSSVModel.KHOAVIEN">
+        <MappingFragment StoreEntitySet="KHOAVIEN">
+          <ScalarProperty Name="MKV" ColumnName="MKV" />
+          <ScalarProperty Name="TenKhoaVien" ColumnName="TenKhoaVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KTXes">
+      <EntityTypeMapping TypeName="QLHSSVModel.KTX">
+        <MappingFragment StoreEntitySet="KTX">
+          <ScalarProperty Name="MaKTX" ColumnName="MaKTX" />
+          <ScalarProperty Name="TenKTX" ColumnName="TenKTX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIHINHDTs">
+      <EntityTypeMapping TypeName="QLHSSVModel.LOAIHINHDT">
+        <MappingFragment StoreEntitySet="LOAIHINHDT">
+          <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+          <ScalarProperty Name="LoaiHinhDT1" ColumnName="LoaiHinhDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOPs">
+      <EntityTypeMapping TypeName="QLHSSVModel.LOP">
+        <MappingFragment StoreEntitySet="LOP">
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGANHs">
+      <EntityTypeMapping TypeName="QLHSSVModel.NGANH">
+        <MappingFragment StoreEntitySet="NGANH">
+          <ScalarProperty Name="MaNganh" ColumnName="MaNganh" />
+          <ScalarProperty Name="TenNganh" ColumnName="TenNganh" />
+          <ScalarProperty Name="MKV" ColumnName="MKV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGOAITRUs">
+      <EntityTypeMapping TypeName="QLHSSVModel.NGOAITRU">
+        <MappingFragment StoreEntitySet="NGOAITRU">
+          <ScalarProperty Name="MaNGT" ColumnName="MaNGT" />
+          <ScalarProperty Name="TenChuHo" ColumnName="TenChuHo" />
+          <ScalarProperty Name="SoDT" ColumnName="SoDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NGUOITHANs">
+      <EntityTypeMapping TypeName="QLHSSVModel.NGUOITHAN">
+        <MappingFragment StoreEntitySet="NGUOITHAN">
+          <ScalarProperty Name="MSV" ColumnName="MSV" />
+          <ScalarProperty Name="HoTenNT" ColumnName="HoTenNT" />
+          <ScalarProperty Name="NamSinh" ColumnName="NamSinh" />
+          <ScalarProperty Name="QuanHe" ColumnName="QuanHe" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOITRUs">
+      <EntityTypeMapping TypeName="QLHSSVModel.NOITRU">
+        <MappingFragment StoreEntitySet="NOITRU">
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="MaKTX" ColumnName="MaKTX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SINHVIENs">
+      <EntityTypeMapping TypeName="QLHSSVModel.SINHVIEN">
+        <MappingFragment StoreEntitySet="SINHVIEN">
+          <ScalarProperty Name="MSV" ColumnName="MSV" />
+          <ScalarProperty Name="HoTenSV" ColumnName="HoTenSV" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+          <ScalarProperty Name="NoiSinh" ColumnName="NoiSinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+          <ScalarProperty Name="TenPhong" ColumnName="TenPhong" />
+          <ScalarProperty Name="MaNGT" ColumnName="MaNGT" />
+          <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERs">
+      <EntityTypeMapping TypeName="QLHSSVModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
