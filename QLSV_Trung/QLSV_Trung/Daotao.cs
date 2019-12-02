@@ -94,11 +94,16 @@ namespace QLSV_Trung
             }
             else
             {
+                
                 if (check(txtMaDT.Text) > 0)
                 {
-                    string sql = "delete from LOAIHINHDT where MaDT = '" + txtMaDT.Text + "'";
-                    db.excute(sql);
-                    refreshDataGridView();
+                    DialogResult dr = MessageBox.Show("Thao tác này sẽ xoá tất cả các sinh viên thuộc loại hình đào tạo này!\n Tiếp tục?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if(dr == DialogResult.Yes)
+                    {
+                        string sql = "delete from LOAIHINHDT where MaDT = '" + txtMaDT.Text + "'";
+                        db.excute(sql);
+                        refreshDataGridView();
+                    }             
                 }
                 else
                 {
