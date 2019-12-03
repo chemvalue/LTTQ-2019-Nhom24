@@ -36,13 +36,13 @@
             this.btbNew = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvKTX = new System.Windows.Forms.DataGridView();
+            this.MaKTX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKTX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaKTX = new System.Windows.Forms.TextBox();
             this.txtTenKTX = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.MaKTX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKTX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKTX)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -56,14 +56,14 @@
             this.label1.Location = new System.Drawing.Point(366, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 31);
+            this.label1.Size = new System.Drawing.Size(226, 31);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Thông tin kí túc xá";
+            this.label1.Text = "Thông tin nội trú";
             // 
             // btnExit
             // 
             this.btnExit.AutoSize = true;
-            this.btnExit.Location = new System.Drawing.Point(234, 478);
+            this.btnExit.Location = new System.Drawing.Point(234, 456);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(83, 30);
@@ -75,7 +75,7 @@
             // btnDel
             // 
             this.btnDel.AutoSize = true;
-            this.btnDel.Location = new System.Drawing.Point(434, 423);
+            this.btnDel.Location = new System.Drawing.Point(434, 401);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(83, 30);
@@ -87,7 +87,7 @@
             // btnEdit
             // 
             this.btnEdit.AutoSize = true;
-            this.btnEdit.Location = new System.Drawing.Point(303, 423);
+            this.btnEdit.Location = new System.Drawing.Point(303, 401);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(83, 30);
@@ -99,7 +99,7 @@
             // btnSave
             // 
             this.btnSave.AutoSize = true;
-            this.btnSave.Location = new System.Drawing.Point(174, 423);
+            this.btnSave.Location = new System.Drawing.Point(174, 401);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(83, 30);
@@ -111,7 +111,7 @@
             // btbNew
             // 
             this.btbNew.AutoSize = true;
-            this.btbNew.Location = new System.Drawing.Point(39, 423);
+            this.btbNew.Location = new System.Drawing.Point(39, 401);
             this.btbNew.Margin = new System.Windows.Forms.Padding(4);
             this.btbNew.Name = "btbNew";
             this.btbNew.Size = new System.Drawing.Size(83, 30);
@@ -128,7 +128,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(476, 410);
+            this.groupBox2.Size = new System.Drawing.Size(476, 383);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách";
@@ -142,66 +142,9 @@
             this.dgvKTX.Location = new System.Drawing.Point(16, 26);
             this.dgvKTX.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKTX.Name = "dgvKTX";
-            this.dgvKTX.Size = new System.Drawing.Size(442, 377);
+            this.dgvKTX.Size = new System.Drawing.Size(442, 345);
             this.dgvKTX.TabIndex = 0;
             this.dgvKTX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKTX_CellContentClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtMaKTX);
-            this.groupBox1.Controls.Add(this.txtTenKTX);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(39, 113);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(461, 256);
-            this.groupBox1.TabIndex = 40;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin ";
-            // 
-            // txtMaKTX
-            // 
-            this.txtMaKTX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMaKTX.Location = new System.Drawing.Point(201, 56);
-            this.txtMaKTX.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKTX.Name = "txtMaKTX";
-            this.txtMaKTX.Size = new System.Drawing.Size(241, 26);
-            this.txtMaKTX.TabIndex = 13;
-            // 
-            // txtTenKTX
-            // 
-            this.txtTenKTX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTenKTX.Location = new System.Drawing.Point(201, 144);
-            this.txtTenKTX.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenKTX.Name = "txtTenKTX";
-            this.txtTenKTX.Size = new System.Drawing.Size(241, 26);
-            this.txtTenKTX.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(44, 64);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 19);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Mã kí túc xá:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(44, 152);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Tên kí túc xá:";
             // 
             // MaKTX
             // 
@@ -217,11 +160,68 @@
             this.TenKTX.Name = "TenKTX";
             this.TenKTX.Width = 250;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtMaKTX);
+            this.groupBox1.Controls.Add(this.txtTenKTX);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(39, 110);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(461, 251);
+            this.groupBox1.TabIndex = 40;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin kí túc xá:";
+            // 
+            // txtMaKTX
+            // 
+            this.txtMaKTX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtMaKTX.Location = new System.Drawing.Point(201, 79);
+            this.txtMaKTX.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKTX.Name = "txtMaKTX";
+            this.txtMaKTX.Size = new System.Drawing.Size(241, 26);
+            this.txtMaKTX.TabIndex = 13;
+            // 
+            // txtTenKTX
+            // 
+            this.txtTenKTX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtTenKTX.Location = new System.Drawing.Point(201, 158);
+            this.txtTenKTX.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenKTX.Name = "txtTenKTX";
+            this.txtTenKTX.Size = new System.Drawing.Size(241, 26);
+            this.txtTenKTX.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(44, 87);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 19);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Mã kí túc xá:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(44, 166);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 19);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Tên kí túc xá:";
+            // 
             // KTX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 563);
+            this.ClientSize = new System.Drawing.Size(1064, 510);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDel);
