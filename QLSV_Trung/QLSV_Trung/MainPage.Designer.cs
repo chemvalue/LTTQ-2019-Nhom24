@@ -35,17 +35,17 @@
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngànhHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLíToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tạmTruToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nộiTrúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kiTúcXáToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ngoạiTrúToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đàoTạoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loạiHìnhĐàoTạoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kiTúcXáToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phòngKíTúcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,26 +106,26 @@
             this.danhToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.danhToolStripMenuItem.Text = "Danh mục";
             // 
+            // lớpToolStripMenuItem
+            // 
+            this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
+            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.lớpToolStripMenuItem.Text = "Lớp";
+            this.lớpToolStripMenuItem.Click += new System.EventHandler(this.lớpToolStripMenuItem_Click);
+            // 
             // ngànhHọcToolStripMenuItem
             // 
             this.ngànhHọcToolStripMenuItem.Name = "ngànhHọcToolStripMenuItem";
-            this.ngànhHọcToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.ngànhHọcToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.ngànhHọcToolStripMenuItem.Text = "Ngành học";
             this.ngànhHọcToolStripMenuItem.Click += new System.EventHandler(this.ngànhHọcToolStripMenuItem_Click);
             // 
             // khoaToolStripMenuItem
             // 
             this.khoaToolStripMenuItem.Name = "khoaToolStripMenuItem";
-            this.khoaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.khoaToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.khoaToolStripMenuItem.Text = "Khoa viện";
             this.khoaToolStripMenuItem.Click += new System.EventHandler(this.khoaToolStripMenuItem_Click);
-            // 
-            // lớpToolStripMenuItem
-            // 
-            this.lớpToolStripMenuItem.Name = "lớpToolStripMenuItem";
-            this.lớpToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.lớpToolStripMenuItem.Text = "Lớp";
-            this.lớpToolStripMenuItem.Click += new System.EventHandler(this.lớpToolStripMenuItem_Click);
             // 
             // quảnLíToolStripMenuItem
             // 
@@ -155,11 +155,19 @@
             // nộiTrúToolStripMenuItem
             // 
             this.nộiTrúToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kiTúcXáToolStripMenuItem});
+            this.kiTúcXáToolStripMenuItem,
+            this.phòngKíTúcToolStripMenuItem});
             this.nộiTrúToolStripMenuItem.Name = "nộiTrúToolStripMenuItem";
             this.nộiTrúToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.nộiTrúToolStripMenuItem.Text = "Nội trú";
             this.nộiTrúToolStripMenuItem.Click += new System.EventHandler(this.nộiTrúToolStripMenuItem_Click);
+            // 
+            // kiTúcXáToolStripMenuItem
+            // 
+            this.kiTúcXáToolStripMenuItem.Name = "kiTúcXáToolStripMenuItem";
+            this.kiTúcXáToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.kiTúcXáToolStripMenuItem.Text = "Ki túc xá";
+            this.kiTúcXáToolStripMenuItem.Click += new System.EventHandler(this.kiTúcXáToolStripMenuItem_Click);
             // 
             // ngoạiTrúToolStripMenuItem
             // 
@@ -183,21 +191,12 @@
             this.loạiHìnhĐàoTạoToolStripMenuItem.Text = "Loại hình đào tạo";
             this.loạiHìnhĐàoTạoToolStripMenuItem.Click += new System.EventHandler(this.loạiHìnhĐàoTạoToolStripMenuItem_Click);
             // 
-            // kiTúcXáToolStripMenuItem
-            // 
-            this.kiTúcXáToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.phòngKíTúcToolStripMenuItem});
-            this.kiTúcXáToolStripMenuItem.Name = "kiTúcXáToolStripMenuItem";
-            this.kiTúcXáToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.kiTúcXáToolStripMenuItem.Text = "Ki túc xá";
-            this.kiTúcXáToolStripMenuItem.Click += new System.EventHandler(this.kiTúcXáToolStripMenuItem_Click);
-            // 
             // phòngKíTúcToolStripMenuItem
             // 
             this.phòngKíTúcToolStripMenuItem.Name = "phòngKíTúcToolStripMenuItem";
             this.phòngKíTúcToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.phòngKíTúcToolStripMenuItem.Text = "Phòng kí túc";
-            this.phòngKíTúcToolStripMenuItem.Click += new System.EventHandler(this.phòngKíTúcToolStripMenuItem_Click);
+            this.phòngKíTúcToolStripMenuItem.Click += new System.EventHandler(this.phòngKíTúcToolStripMenuItem_Click_1);
             // 
             // MainPage
             // 

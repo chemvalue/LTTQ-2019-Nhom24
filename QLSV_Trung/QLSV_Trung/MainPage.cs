@@ -83,7 +83,8 @@ namespace QLSV_Trung
             ktx.Show();
         }
 
-        private void phòngKíTúcToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void phòngKíTúcToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             NoiTru nt = new NoiTru();
             nt.Show();
