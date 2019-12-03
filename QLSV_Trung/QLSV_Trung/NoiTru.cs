@@ -116,6 +116,9 @@ namespace QLSV_Trung
                     {
                         string sql = String.Format("DELETE FROM NOITRU WHERE TenPhong = '{0}'", txtTenPhong.Text);
                         db.excute(sql);
+                        txtTenPhong.Clear();
+                        txtSoLuong.Clear();
+                        txtMaKTX.Clear();
                         refreshDataGridView();
                     }
                 }

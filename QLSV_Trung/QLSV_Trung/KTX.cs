@@ -28,6 +28,7 @@ namespace QLSV_Trung
         {
             refreshDataGridView();
         }
+        
 
         private void btbNew_Click(object sender, EventArgs e)
         {
@@ -97,6 +98,8 @@ namespace QLSV_Trung
                     {
                         string sql = String.Format("DELETE FROM KTX WHERE MaKTX = '{0}'", txtMaKTX.Text);
                         db.excute(sql);
+                        txtMaKTX.Clear();
+                        txtTenKTX.Clear();
                         refreshDataGridView();
                     }
                 }

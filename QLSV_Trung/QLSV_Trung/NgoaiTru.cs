@@ -109,6 +109,10 @@ namespace QLSV_Trung
                     {
                         string sql = String.Format("DELETE FROM NGOAITRU WHERE MaNGT = '{0}'",txtMNT.Text);
                         db.excute(sql);
+                        txtMNT.Clear();
+                        txtTench.Clear();
+                        txtSDT.Clear();
+                        txtDiaChi.Clear();
                         refreshDataGridView();
                     }
                 }

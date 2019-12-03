@@ -53,12 +53,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(366, 40);
+            this.label1.Location = new System.Drawing.Point(373, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 31);
+            this.label1.Size = new System.Drawing.Size(325, 31);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Thông tin nội trú";
+            this.label1.Text = "Quản lý thông tin nội trú";
             // 
             // btnExit
             // 

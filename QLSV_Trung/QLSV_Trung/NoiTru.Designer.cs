@@ -61,18 +61,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(389, 41);
+            this.label1.Location = new System.Drawing.Point(390, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 31);
+            this.label1.Size = new System.Drawing.Size(333, 31);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Thông tin nội trú ";
+            this.label1.Text = "Quản lý thông tin nội trú ";
             // 
             // btnExit
             // 
             this.btnExit.AutoSize = true;
             this.btnExit.Location = new System.Drawing.Point(228, 476);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(83, 30);
             this.btnExit.TabIndex = 42;
@@ -84,7 +84,7 @@
             // 
             this.btnDel.AutoSize = true;
             this.btnDel.Location = new System.Drawing.Point(428, 421);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(83, 30);
             this.btnDel.TabIndex = 43;
@@ -96,7 +96,7 @@
             // 
             this.btnEdit.AutoSize = true;
             this.btnEdit.Location = new System.Drawing.Point(297, 421);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(83, 30);
             this.btnEdit.TabIndex = 44;
@@ -108,7 +108,7 @@
             // 
             this.btnSave.AutoSize = true;
             this.btnSave.Location = new System.Drawing.Point(168, 421);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(83, 30);
             this.btnSave.TabIndex = 45;
@@ -120,7 +120,7 @@
             // 
             this.btbNew.AutoSize = true;
             this.btbNew.Location = new System.Drawing.Point(33, 421);
-            this.btbNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btbNew.Margin = new System.Windows.Forms.Padding(4);
             this.btbNew.Name = "btbNew";
             this.btbNew.Size = new System.Drawing.Size(83, 30);
             this.btbNew.TabIndex = 46;
@@ -133,9 +133,9 @@
             this.groupBox2.Controls.Add(this.dgvNoiTru);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(549, 108);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(492, 410);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
@@ -150,7 +150,7 @@
             this.MaKTX,
             this.Status});
             this.dgvNoiTru.Location = new System.Drawing.Point(16, 26);
-            this.dgvNoiTru.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvNoiTru.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNoiTru.Name = "dgvNoiTru";
             this.dgvNoiTru.Size = new System.Drawing.Size(459, 377);
             this.dgvNoiTru.TabIndex = 0;
@@ -198,9 +198,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(33, 111);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(495, 287);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
@@ -236,7 +236,7 @@
             // 
             this.txtMaKTX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMaKTX.Location = new System.Drawing.Point(201, 164);
-            this.txtMaKTX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaKTX.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKTX.Name = "txtMaKTX";
             this.txtMaKTX.Size = new System.Drawing.Size(241, 26);
             this.txtMaKTX.TabIndex = 14;
@@ -256,7 +256,7 @@
             // 
             this.txtTenPhong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTenPhong.Location = new System.Drawing.Point(201, 46);
-            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(241, 26);
             this.txtTenPhong.TabIndex = 13;
@@ -265,7 +265,7 @@
             // 
             this.txtSoLuong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSoLuong.Location = new System.Drawing.Point(201, 103);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(241, 26);
             this.txtSoLuong.TabIndex = 13;
@@ -319,7 +319,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NoiTru";
-            this.Text = "Nội trú";
+            this.Text = "Phòng kí túc ";
             this.Load += new System.EventHandler(this.NoiTru_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNoiTru)).EndInit();
