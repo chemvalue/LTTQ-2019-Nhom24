@@ -52,7 +52,7 @@ namespace QLSV_Trung
             }
             if (check(txtMaDT.Text) == 0)
             {
-                string sql = "insert into LOAIHINHDT values('" + txtMaDT.Text + "','" + txtLoaihinh.Text + "')";
+                string sql = "insert into LOAIHINHDT values('" + txtMaDT.Text + "',N'" + txtLoaihinh.Text + "')";
                 db.excute(sql);
                 refreshDataGridView();
             }
@@ -73,7 +73,7 @@ namespace QLSV_Trung
             }
             if (check(txtMaDT.Text) > 0)
             {
-                string sql = "update LOAIHINHDT set LoaiHinhDT = '" + txtLoaihinh.Text + "' where MaDT = '" + txtMaDT.Text + "'";
+                string sql = "update LOAIHINHDT set LoaiHinhDT = N'" + txtLoaihinh.Text + "' where MaDT = '" + txtMaDT.Text + "'";
                 db.excute(sql);
                 refreshDataGridView();
             }

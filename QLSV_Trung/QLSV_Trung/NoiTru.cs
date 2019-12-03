@@ -15,6 +15,7 @@ namespace QLSV_Trung
     {
         MyDatabase db = new MyDatabase();
         SqlConnection conn;
+        string stt = "";
 
         public NoiTru()
         {
@@ -24,6 +25,8 @@ namespace QLSV_Trung
         private void refreshDataGridView()
         {
             dgvNoiTru.DataSource = db.getData("SELECT * FROM NOITRU");
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
         }
 
         private void NoiTru_Load(object sender, EventArgs e)
@@ -51,31 +54,24 @@ namespace QLSV_Trung
         {
             
             conn = db.connected();
-            conn.Open();
-            string stt = "";
-            if (radioButton1.Checked)
-            {
-                stt = radioButton1.Text;
-            }
-            if (radioButton2.Checked)
-            {
-                stt = radioButton2.Text;
-            }
+            conn.Open(); 
             if (string.IsNullOrWhiteSpace(txtTenPhong.Text) | string.IsNullOrWhiteSpace(txtSoLuong.Text) | string.IsNullOrWhiteSpace(txtMaKTX.Text))
             {
                 MessageBox.Show("Không được để trống trường!", "Thông báo!");
             }
-            if (check(txtTenPhong.Text) == 0)
-            {
-                string sql = String.Format("INSERT INTO NOITRU VALUES('{0}', '{1}',N'{2}','{3}');", txtTenPhong.Text, txtSoLuong.Text,stt, txtMaKTX.Text);
-                db.excute(sql);                
-                refreshDataGridView();
-            }
             else
             {
-                MessageBox.Show("Tên phòng đã tồn tại!", "Thông Báo!");
-            }
-            
+                if (check(txtTenPhong.Text) == 0)
+                {
+                    string sql = String.Format("INSERT INTO NOITRU VALUES('{0}','{1}',{2},'{3}');", txtTenPhong.Text, txtSoLuong.Text, stt, txtMaKTX.Text);
+                    db.excute(sql);
+                    refreshDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Tên phòng đã tồn tại!", "Thông Báo!");
+                }
+            }     
             conn.Close();
         }
 
@@ -87,16 +83,19 @@ namespace QLSV_Trung
             {
                 MessageBox.Show("Không được để trống trường!", "Thông báo!");
             }
-            if (check(txtTenPhong.Text) > 0)
-            {
-                string sql = String.Format("UPDATE NOITRU SET SoLuong = '{0}' WHERE TenPhong = '{1}',MaKTX = '{2}';", txtSoLuong.Text, txtTenPhong.Text, txtMaKTX.Text);
-                db.excute(sql);
-                refreshDataGridView();
-            }
             else
             {
-                MessageBox.Show("Phòng không tồn tại", "Thông báo!");
-            }
+                if (check(txtTenPhong.Text) > 0)
+                {
+                    string sql = String.Format("UPDATE NOITRU SET SoLuong = '{0}', Status = '{1}' WHERE TenPhong = '{2}' and MaKTX = '{3}';", txtSoLuong.Text, stt, txtTenPhong.Text, txtMaKTX.Text);
+                    db.excute(sql);
+                    refreshDataGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Phòng không tồn tại", "Thông báo!");
+                }
+            }           
             conn.Close();
         }
 
@@ -110,13 +109,12 @@ namespace QLSV_Trung
             }
             else
             {
-
                 if (check(txtTenPhong.Text) > 0)
                 {
                     DialogResult dr = MessageBox.Show("Thao tác này sẽ xoá tất cả các sinh viên có nội trú này!\n Tiếp tục?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        string sql = String.Format("DELETE FROM NGOAITRU WHERE TenPhong = '{0}'", txtTenPhong.Text);
+                        string sql = String.Format("DELETE FROM NOITRU WHERE TenPhong = '{0}'", txtTenPhong.Text);
                         db.excute(sql);
                         refreshDataGridView();
                     }
@@ -142,7 +140,30 @@ namespace QLSV_Trung
             return a;
         }
 
-       
+        private void checkstt()
+        {
+            if(!txtSoLuong.Text.Equals(""))
+            {
+                if (Convert.ToInt32(txtSoLuong.Text.ToString()) < 6)
+                {
+                    radioButton1.Checked = false;
+                    radioButton2.Checked = true;
+                    stt = "0";
+                }
+                else
+                {
+                    radioButton1.Checked = true;
+                    radioButton2.Checked = false;
+                    stt = "1";
+                }
+            }
+            else
+            {
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
+            }
+            
+        }
         
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -152,6 +173,11 @@ namespace QLSV_Trung
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+            checkstt();
         }
     }
 }

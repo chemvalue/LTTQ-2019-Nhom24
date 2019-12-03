@@ -44,11 +44,6 @@ namespace QLSV_Trung
             cboDT.DisplayMember = "LoaiHinhDT";
             cboDT.ValueMember = "MaDT";
             cboDT.DataSource = db.getData("select * from LOAIHINHDT");
-
-            
-
-            
-
         }
         private void refreshDataGridView()
         {
@@ -93,9 +88,9 @@ namespace QLSV_Trung
                 conn.Open();
                 if (check("MSV","SINHVIEN",txtMSV.Text) == 0)
                 {
-                    string sql = "insert into SINHVIEN values('" + txtMSV.Text + "','" + txtHoten.Text + "','" + txtNgaysinh.Text +
-                        "','" + txtGioitinh.Text + "','" + txtCMND.Text + "','" + txtSDT.Text + "','" + txtDantoc.Text +
-                        "','" + txtNoisinh.Text + "','" + txtQuequan.Text + "','" + cboLop.SelectedValue.ToString() + "','" + ktx + 
+                    string sql = "insert into SINHVIEN values('" + txtMSV.Text + "',N'" + txtHoten.Text + "','" + txtNgaysinh.Text +
+                        "',N'" + txtGioitinh.Text + "','" + txtCMND.Text + "','" + txtSDT.Text + "',N'" + txtDantoc.Text +
+                        "',N'" + txtNoisinh.Text + "',N'" + txtQuequan.Text + "','" + cboLop.SelectedValue.ToString() + "','" + ktx + 
                         "','" + ngt +"','" + cboDT.SelectedValue.ToString() + "')";
                     db.excute(sql);
                     refreshDataGridView();
@@ -120,9 +115,9 @@ namespace QLSV_Trung
                 conn.Open();
                 if (check("MSV", "SINHVIEN", txtMSV.Text) > 0)
                 {
-                    string sql = "update SINHVIEN set HoTenSV = '" + txtHoten.Text + "', NgaySinh = '" + txtNgaysinh.Text + "', GioiTinh = '" + txtGioitinh.Text +
-                        "', CMND = '" + txtCMND.Text + "', SDT = '" + txtSDT.Text + "', DanToc = '" + txtDantoc.Text + "', NoiSinh ='" + txtNoisinh.Text +
-                        "', QueQuan = '" + txtQuequan.Text + "', MaLop = '" + cboLop.SelectedValue.ToString() + "', TenPhong = '" + ktx + 
+                    string sql = "update SINHVIEN set HoTenSV = N'" + txtHoten.Text + "', NgaySinh = '" + txtNgaysinh.Text + "', GioiTinh = N'" + txtGioitinh.Text +
+                        "', CMND = '" + txtCMND.Text + "', SDT = '" + txtSDT.Text + "', DanToc = N'" + txtDantoc.Text + "', NoiSinh =N'" + txtNoisinh.Text +
+                        "', QueQuan = N'" + txtQuequan.Text + "', MaLop = '" + cboLop.SelectedValue.ToString() + "', TenPhong = '" + ktx + 
                         "', MaNGT = '" + ngt + "', MaDT = '" + cboDT.SelectedValue.ToString() + "' where MSV = '"+txtMSV.Text+"'";
                     db.excute(sql);
                     refreshDataGridView();

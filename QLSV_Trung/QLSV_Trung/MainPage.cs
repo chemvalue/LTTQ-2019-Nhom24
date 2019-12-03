@@ -37,17 +37,20 @@ namespace QLSV_Trung
 
         private void ngànhHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Nganh n = new Nganh();
+            n.Show();
         }
 
         private void khoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            KhoaVien kv = new KhoaVien();
+            kv.Show();
         }
 
         private void lớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Lop lp = new Lop();
+            lp.Show();
         }
 
         private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,15 +59,28 @@ namespace QLSV_Trung
             st.ShowDialog();
         }
 
-        private void tạmTruToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loạiHìnhĐàoTạoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Daotao dt = new Daotao();
             dt.Show();
+        }
+
+        private void kýTúcXáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KTX ktx = new KTX();
+            ktx.Show();
+        }
+
+        private void nộiTrúToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NoiTru nt = new NoiTru();
+            nt.Show();
+        }
+
+        private void ngoạiTrúToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NgoaiTru nt = new NgoaiTru();
+            nt.Show();
         }
     }
 }

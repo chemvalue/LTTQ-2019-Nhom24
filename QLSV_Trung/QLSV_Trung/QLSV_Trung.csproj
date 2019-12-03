@@ -50,6 +50,18 @@
     <Compile Include="Daotao.Designer.cs">
       <DependentUpon>Daotao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nganh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nganh.Designer.cs">
+      <DependentUpon>Nganh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhoaVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoaVien.Designer.cs">
+      <DependentUpon>KhoaVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="KTX.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +73,12 @@
     </Compile>
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lop.Designer.cs">
+      <DependentUpon>Lop.cs</DependentUpon>
     </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
@@ -98,14 +116,23 @@
     <EmbeddedResource Include="Daotao.resx">
       <DependentUpon>Daotao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoaVien.resx">
+      <DependentUpon>KhoaVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KTX.resx">
       <DependentUpon>KTX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Lop.resx">
+      <DependentUpon>Lop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nganh.resx">
+      <DependentUpon>Nganh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NgoaiTru.resx">
       <DependentUpon>NgoaiTru.cs</DependentUpon>
