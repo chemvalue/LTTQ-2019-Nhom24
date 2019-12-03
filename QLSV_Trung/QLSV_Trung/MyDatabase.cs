@@ -13,6 +13,7 @@ namespace QLSV_Trung
     {       
         SqlConnection myConnection;
         string conStr = @"Data Source=DESKTOP-643MFM9;Initial Catalog=QLHSSV;Integrated Security=True";
+        //string conStr = @"Data Source=DESKTOP-MVLV0FH\SQLEXPRESS;Initial Catalog=QLHSSV;Integrated Security=True";
         public MyDatabase()
         {
             myConnection = new SqlConnection(conStr);
