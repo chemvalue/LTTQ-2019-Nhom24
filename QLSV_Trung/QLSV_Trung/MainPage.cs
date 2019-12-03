@@ -65,21 +65,27 @@ namespace QLSV_Trung
             dt.Show();
         }
 
-        private void kýTúcXáToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            KTX ktx = new KTX();
-            ktx.Show();
-        }
+    
 
         private void nộiTrúToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NoiTru nt = new NoiTru();
-            nt.Show();
         }
 
         private void ngoạiTrúToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NgoaiTru nt = new NgoaiTru();
+            nt.Show();
+        }
+
+        private void kiTúcXáToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KTX ktx = new KTX();
+            ktx.Show();
+        }
+
+        private void phòngKíTúcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NoiTru nt = new NoiTru();
             nt.Show();
         }
     }
