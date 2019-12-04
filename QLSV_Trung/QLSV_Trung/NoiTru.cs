@@ -52,26 +52,36 @@ namespace QLSV_Trung
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+
             conn = db.connected();
-            conn.Open(); 
+            conn.Open();
             if (string.IsNullOrWhiteSpace(txtTenPhong.Text) | string.IsNullOrWhiteSpace(txtSoLuong.Text) | string.IsNullOrWhiteSpace(txtMaKTX.Text))
             {
                 MessageBox.Show("Không được để trống trường!", "Thông báo!");
             }
             else
             {
-                if (check(txtTenPhong.Text) == 0)
+                if (check("NOITRU", "TenPhong", txtTenPhong.Text) == 0)
                 {
-                    string sql = String.Format("INSERT INTO NOITRU VALUES('{0}','{1}',{2},'{3}');", txtTenPhong.Text, txtSoLuong.Text, stt, txtMaKTX.Text);
-                    db.excute(sql);
-                    refreshDataGridView();
+                    if (check("KTX", "MaKTX", txtMaKTX.Text) > 0)
+                    {
+                        string sql = String.Format("INSERT INTO NOITRU VALUES('{0}','{1}',{2},'{3}');", txtTenPhong.Text, txtSoLuong.Text, stt, txtMaKTX.Text);
+                        db.excute(sql);
+                        txtTenPhong.Clear();
+                        txtSoLuong.Clear();
+                        txtMaKTX.Clear();
+                        refreshDataGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chưa tồn tại mã ký túc xá này!", "Thông báo!");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Tên phòng đã tồn tại!", "Thông Báo!");
                 }
-            }     
+            }
             conn.Close();
         }
 
@@ -85,17 +95,24 @@ namespace QLSV_Trung
             }
             else
             {
-                if (check(txtTenPhong.Text) > 0)
+                if (check("NOITRU", "TenPhong", txtTenPhong.Text) > 0)
                 {
-                    string sql = String.Format("UPDATE NOITRU SET SoLuong = '{0}', Status = '{1}' WHERE TenPhong = '{2}' and MaKTX = '{3}';", txtSoLuong.Text, stt, txtTenPhong.Text, txtMaKTX.Text);
-                    db.excute(sql);
-                    refreshDataGridView();
+                    if (check("KTX", "MaKTX", txtMaKTX.Text) > 0)
+                    {
+                        string sql = String.Format("UPDATE NOITRU SET SoLuong = '{0}', Status = '{1}' WHERE TenPhong = '{2}' and MaKTX = '{3}';", txtSoLuong.Text, stt, txtTenPhong.Text, txtMaKTX.Text);
+                        db.excute(sql);
+                        refreshDataGridView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chưa tồn tại mã ký túc xá này!", "Thông báo!");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Phòng không tồn tại", "Thông báo!");
                 }
-            }           
+            }
             conn.Close();
         }
 
@@ -109,8 +126,9 @@ namespace QLSV_Trung
             }
             else
             {
-                if (check(txtTenPhong.Text) > 0)
+                if (check("NOITRU", "TenPhong", txtTenPhong.Text) > 0)
                 {
+
                     DialogResult dr = MessageBox.Show("Thao tác này sẽ xoá tất cả các sinh viên có nội trú này!\n Tiếp tục?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
@@ -121,6 +139,8 @@ namespace QLSV_Trung
                         txtMaKTX.Clear();
                         refreshDataGridView();
                     }
+
+
                 }
                 else
                 {
@@ -135,9 +155,9 @@ namespace QLSV_Trung
             this.Close();
         }
 
-        private int check(string st)
+        private int check(string st, string str, string ma)
         {
-            string sql = "select COUNT(*) from NOITRU where TenPhong = '" + st + "'";
+            string sql = "select COUNT(*) from " + st + " where " + str + " = '" + ma + "'";
             SqlCommand cmd = new SqlCommand(sql, conn);
             int a = (int)cmd.ExecuteScalar();
             return a;
@@ -145,7 +165,7 @@ namespace QLSV_Trung
 
         private void checkstt()
         {
-            if(!txtSoLuong.Text.Equals(""))
+            if (!txtSoLuong.Text.Equals(""))
             {
                 if (Convert.ToInt32(txtSoLuong.Text.ToString()) < 6)
                 {
@@ -165,12 +185,12 @@ namespace QLSV_Trung
                 radioButton1.Checked = false;
                 radioButton2.Checked = false;
             }
-            
+
         }
-        
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
